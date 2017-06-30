@@ -29,8 +29,12 @@ shinyUI(navbarPage(
                                        "trust", "generosity")),
 
            
-           plotOutput(outputId = "dend_plot", height = "300px"),
-           plotlyOutput(outputId = "heat", height = "300px")
+           plotOutput(outputId = "dend_plot", height = "300px")
+           #plotlyOutput(outputId = "heat", height = "300px")
           
+  ),
+  tabPanel("Heatmap",
+           titlePanel("Heatmap of factor correlation"),
+           plotlyOutput(outputId = "heat", height = "300px")
   )
 ))

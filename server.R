@@ -151,7 +151,9 @@ shinyServer(function(input, output) {
   correlation_matrix <- get_lower_tri(correlation_matrix)
   melted_cormat <- melt(correlation_matrix, na.rm = T)
   
-  heatmap <- heatmaply(correlation_matrix, Rowv = F, Colv = F)
+  heatmap <- heatmaply(correlation_matrix, Rowv = F, Colv = F,
+                       scale_fill_gradient_fun = scale_fill_gradient2(),
+                       low = "dark blue", high = "white")
   
   output$dend_plot <- renderPlot({
     
